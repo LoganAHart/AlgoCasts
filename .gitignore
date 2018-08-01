@@ -1,5 +1,5 @@
 # dependencies
-/excercises/node_modules
+exercises/node_modules/
 
 # testing
 excercises/coverage
