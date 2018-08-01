@@ -1,1 +1,8 @@
+# dependencies
+/excercises/node_modules
+
+# testing
+excercises/coverage
+
+# misc
 .DS_Store
