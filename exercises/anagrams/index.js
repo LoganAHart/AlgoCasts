@@ -8,6 +8,14 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
+function anagramsAlt(stringA, stringB) {
+  return formatAltHelper(stringA) === formatAltHelper(stringB);
+}
+
+function formatAltHelper(str) {
+  return str.replace(/[^\w]/g, '').toLowerCase.split('').sort().join('');
+}
+
 function anagrams(stringA, stringB) {
   const formatA = formatStr(stringA);
   const formatB = formatStr(stringB);
