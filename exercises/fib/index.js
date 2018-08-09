@@ -8,6 +8,48 @@
 // Example:
 //   fib(4) === 3
 
-function fib(n) {}
+//recursive solution using memoization
+
+function memoize(fn) {
+  const cache = {};
+  return function(...args) {
+    if (cache[args]) {
+      return cache[args];
+    }
+    const result = fn(...args);
+    cache[args] = result;
+    return result;
+  };
+}
+
+function slowFib(n) {
+  if (n < 2) {
+    return n;
+  }
+  return fib(n - 1) + fib(n - 2);
+}
+
+const fib = memoize(slowFib);
+
+
+
+//recursive solution
+  //runtime --> Exponential O(2^n)
+// function fib(n) {
+//   if (n < 2) {
+//     return n;
+//   }
+//   return fib(n - 1) + fib(n - 2);
+// }
+
+//iterative solution
+  //runtime --> Linear O(n)
+// function fib(n) {
+//   const results = [0, 1];
+//   for (let i = 2; i <= n; i++) {
+//     results.push(results[i - 1] + results[i - 2]);
+//   }
+//   return results[n];
+// }
 
 module.exports = fib;
