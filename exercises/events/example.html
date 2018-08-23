@@ -5,6 +5,16 @@
   <h1>Click the button</h1>
   <button>Me!</button>
   <script>
-    
+    let count = 0;
+    $('button').on('click', () => {
+      if (count < 3) {
+        console.log('Hello!');
+        count += 1;
+      } else {
+        console.log('Goodbye!')
+        $('button').off('click');
+      }
+    });
+    $('button').trigger('click');
   </script>
 </body>
